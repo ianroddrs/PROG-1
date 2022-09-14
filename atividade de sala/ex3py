@@ -1,0 +1,13 @@
+#atividade 3
+
+lista = ['amarelo','laranja','verde','preto','rosa','lilas','ciano']
+
+arquivo = 'arquivo.txt'
+
+with open(arquivo, 'r', encoding='utf-8') as f:
+    for palavra in lista:
+        contador = 0
+        for linhas in f:
+            if palavra in linhas:
+                contador += 1
+        print(palavra, "=", contador)
