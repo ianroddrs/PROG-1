@@ -10,4 +10,4 @@ with open(arquivo, 'r', encoding='utf-8') as f:
         for linhas in f:
             if palavra in linhas:
                 contador += 1
-        print(palavra, "=", contador)
+print(palavra, "=", contador)
