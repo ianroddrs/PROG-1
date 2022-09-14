@@ -131,3 +131,51 @@ resposta operadores
 
 }
 '''
+  
+'''
+FUNCOES
+
+1)
+  V
+  F
+  V
+  V
+  ANULADA
+  F
+  V
+  V
+
+2)
+  V
+  V
+  F
+  F
+  V
+  F
+  F
+  F
+  
+3)
+  V
+  F
+  V
+  V
+  V
+  
+4)
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  def f(N, X= 3)
+      pass
+      
+  f(5, n = 2)
+  
+'''
