@@ -11,3 +11,23 @@ with open(arquivo, 'r', encoding='utf-8') as f:
             if palavra in linhas:
                 contador += 1
 print(palavra, "=", contador)
+
+
+'''
+def pesquisa(linha, lista):
+    for item in lista:
+        if item in linha:
+            return True
+    return False
+
+lista = ['amarelo','laranja','verde','preto','rosa','lilas','ciano']
+
+arquivo = 'arquivo.txt'
+
+with open(arquivo, 'r', encoding='utf-8') as f:
+    contador = 0
+    for linha in f:
+        if pesquisa(linha, lista):
+            contador += 1
+print(contador)
+
