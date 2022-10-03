@@ -21,41 +21,41 @@ with open(file, 'r', encoding='utf-8') as f:
 for i in range(10):
     print(columns[4][i])
     
-# # A
-# def SearchName(nome = ''):
-#     registers = 0
-#     listaNomes = []
-#     for itens in columns[3]:
-#         if nome.capitalize() in itens:
-#             registers += 1
-#             listaNomes.append(itens)
-#     return registers, listaNomes
-# # B
-# def SearchYearSex(ano, sexo):
-#     registersAno = 0
-#     registersSexo = 0
-#     for itens in columns[2]:
-#         if sexo.upper() in itens:
-#             registersSexo += 1
-#     for itens in columns[1]:
-#         if ano >= itens:
-#             registersAno += 1
+# A
+def SearchName(nome = ''):
+    registers = 0
+    listaNomes = []
+    for itens in columns[3]:
+        if nome.capitalize() in itens:
+            registers += 1
+            listaNomes.append(itens)
+    return registers, listaNomes
+# B
+def SearchYearSex(ano, sexo):
+    registersAno = 0
+    registersSexo = 0
+    for itens in columns[2]:
+        if sexo.upper() in itens:
+            registersSexo += 1
+    for itens in columns[1]:
+        if ano >= itens:
+            registersAno += 1
 
-#     return registersAno, registersSexo
-# # C
-# def SearchString(arg):
-#     listaArgs = []
-#     for itens in columns:
-#         if arg in itens:
-#             listaArgs.append(arg)
-#     return listaArgs
+    return registersAno, registersSexo
+# C
+def SearchString(arg):
+    listaArgs = []
+    for itens in columns:
+        if arg in itens:
+            listaArgs.append(arg)
+    return listaArgs
 # D
-# def SearchID(numero):
-#     listaIDs = []
-#     for indice, itens in enumerate(columns[4]):
-#         if itens == numero:
-#             listaIDs.append(columns[0][indice])
-#     return listaIDs
+def SearchID(numero):
+    listaIDs = []
+    for indice, itens in enumerate(columns[4]):
+        if itens == numero:
+            listaIDs.append(columns[0][indice])
+    return listaIDs
 # E
 def InsertOnTable(nome, ano, sexo, numero):
     newID = int(columns[0][-1]) + 1

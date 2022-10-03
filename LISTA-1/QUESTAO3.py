@@ -3,7 +3,6 @@ from random import randint
 
 arquivo = 'D:\Workspace\PROG-1\LISTA-1\primos_entre_si.txt'
 
-
 def PrimosEntreSi(n1,n2):
     """
     verifica se dois números são primos entre si.
@@ -22,30 +21,54 @@ def PrimosEntreSi(n1,n2):
     else:
         return False
 
+def CalculoPorcentagem(qtd):
+    """
+    Faz o calculo da porcentagem de números que são primos entre si
 
-try:
-    with open(arquivo, 'a', encoding='utf-8') as f:
-        qtd = 0
-        for i in range(1000):
-            n1 = randint(1,100)
-            n2 = randint(1,100)
+    Arguments:
+        qtd: um numero inteiro
 
-            resposta = PrimosEntreSi(int(n1), int(n2))
+    returns:
+        Uma String com o texto do valor em porcentagem da quantidade de números primos entre si dos MIL sorteados
+    """
+    porcentagemText = f"{qtd /10}%"
 
-            if resposta: qtd += 1
-
-            porcentagem = qtd/10
-
-            resposta = "SIM" if resposta else "NÃO"
-
-            f.write(f'{n1},{n2},{resposta}\n')
-
+    return porcentagemText
         
-        f.write(f'\n{porcentagem}% dos números sorteados são primos entre si.')
-        
-except FileNotFoundError:
-    print("Arquivo para escrita não encontrado no diretório designado.")
-except TypeError:
-    print("O número informado não é inteiro.")
-except ValueError:
-    print("Valor informado é inválido")
+    
+
+def PROG_03():
+    """
+    Sorteia MIL vezes dois números aleatórios entre 1 e 100 e verifica se os mesmos são primos entre si.
+
+    Returns:
+        A porcentagem de números primos entre si considerando os MIL sorteios de números.
+    """
+    try:
+       
+        with open(arquivo, 'a', encoding='utf-8') as f:
+            quantidade = 0
+            for i in range(1000):
+                n1 = randint(1,100)
+                n2 = randint(1,100)
+
+                EPrimo = PrimosEntreSi(int(n1), int(n2))
+
+                quantidade += 1 if EPrimo else 0
+
+                resposta = "SIM" if EPrimo else "NÃO"
+
+                f.write(f'{n1},{n2} - {resposta}\n')
+
+            porcentagem = CalculoPorcentagem(int(quantidade))    
+    
+    except FileNotFoundError:
+        print("Arquivo para escrita não encontrado no diretório designado.")
+    except TypeError:
+        print("O número informado não é inteiro.")
+    except ValueError:
+        print("Valor informado é inválido")
+    
+    return porcentagem
+
+PROG_03()
