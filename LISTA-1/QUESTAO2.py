@@ -1,5 +1,3 @@
-from urllib import response
-
 
 arquivo = 'D:\Workspace\PROG-1\LISTA-1\dados_DNA.txt'
 
@@ -26,9 +24,34 @@ def funcaoC():
             freq = funcaoA(cadeia, 'ATCCG')
             tem = funcaoB(cadeia, 'ATCCG')
             f.write(f'{cadeia[:-1]},{freq},{tem}\n')
-            ntem = funcaoD(cadeia.split(",")[2])
 
+def funcaoD():
+    with open(arquivo,'r',encoding='utf-8') as f:
+        linhas = f.readlines()
+        qtd = 0
+        for linha in linhas[1:]:
+            if linha[2] == "False":
+                qtd += 1
+    return qtd
 
+def funcaoE():
+    with open(arquivo,'r',encoding='utf-8') as f:
+        linhas = f.readlines()
+        maxima = 0
+        for linha in linhas[1:]:
+            linha = linha.split(',')
+            if int(linha[1]) > maxima:
+                 maxima = linha[1]
+    return maxima
 
+def funcaoF():
+    with open(arquivo,'r',encoding='utf-8') as f:
+        linhas = f.readlines()
+        maxima = funcaoE()
+        for linha in linhas[1:]:
+            index = list(enumerate(linha))[0][0]
+        print(index)
 
-funcaoC()
+    return maxima
+
+print(funcaoE())
