@@ -1,0 +1,20 @@
+'amarelo', 'laranja', 'verde', 'preto', 'rosa', 'lilas', 'ciano'
+
+'amarelo', 'laranja', 'verde', 'preto', 'rosa', 'lilas', 'ciano'
+
+'amarelo', 'laranja', 'verde', 'preto', 'rosa', 'lilas', 'ciano'
+
+'amarelo', 'laranja', 'verde', 'preto', 'rosa', 'lilas', 'ciano'
+
+'amarelo', 'laranja', 'verde', 'preto', 'rosa', 'lilas', 'ciano'
+
+'amarelo', 'laranja', 'verde', 'preto', 'rosa', 'lilas', 'ciano'
+
+'amarelo', 'laranja', 'verde', 'preto', 'rosa', 'lilas', 'ciano'
+
+'amarelo', 'laranja', 'verde', 'preto', 'rosa', 'lilas', 'ciano'
+
+'amarelo', 'laranja', 'verde', 'preto', 'rosa', 'lilas', 'ciano'
+
+
+
