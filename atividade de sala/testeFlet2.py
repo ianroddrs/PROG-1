@@ -58,4 +58,6 @@ def programa():
             cadastrar()
         else:
             print("nenhuma opção válida")
+        
+        opcao = menu()
 
