@@ -1,7 +1,7 @@
 import flet
 from flet import IconButton, Page, Row, TextField, icons, theme, colors, border_radius,Container, Text
 
-from testeFlet2 import get_indice
+# from testeFlet2 import get_indice
 
 def main(page: Page):
     page.title = "Calc App"
