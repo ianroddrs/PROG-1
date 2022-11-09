@@ -1,0 +1,87 @@
+'''lista = [ 
+    {
+        'nome': 'Renato Hidaka Torres',
+        'e-mail' : 'renato@gmail.com',
+    },
+    {
+        'nome': 'Julia Torres',
+        'e-mail' : 'julia@gmail.com',
+    },
+]
+
+def mapeamento(item):
+    return item['e-mail']
+
+# emails = [mapeamento(item) for item in lista]
+emails = [item['e-mail'] for item in lista]
+
+print(emails)'''
+
+
+
+'''----------------------------------------------------------------------'''
+
+
+
+'''lista = ['renato',7,17,'hidaka',12,9]
+
+def filtro(item):
+    return type(item) is int
+
+# lista = [item for item in lista if filtro(item)]
+lista = [item for item in lista if type(item) is int]
+
+print(lista)
+'''
+
+"""--------------------------------------------------------------------------"""
+cadastros = [
+    {
+        'nome':'pedro carlos',
+        'e-mail':'pedro@gmail.com',
+    },
+    {
+        'nome':'carlos pedro',
+        'e-mail':'carlos@outlook.com'
+    }
+]
+
+"""for item in cadastros.copy():
+    if '@gmail' not in item['e-mail']:
+        cadastros.remove(item)"""
+
+
+def filtro(item):
+    return '@gmail' in item['e-mail']
+
+def mapeamento(item):
+    return item['nome']
+
+#cadastros = [item for item in cadastros if filtro(item)]
+
+cadastros = [mapeamento(item) for item in cadastros if filtro(item)]
+
+
+print(*cadastros, sep='\n')
+
+"""------------------------------------------------------------------------"""
+"""lista = [ 10,9,11,14,8,4,7,16,12,14]
+nova_lista = []
+
+for pred, item in zip(lista, lista[1:]):
+    if item > pred:
+        if item%2 == 0:
+            nova_lista.append(item+1)
+        else:
+            nova_lista.append(item-1)
+
+print(nova_lista)"""
+
+def filtro(pred, item):
+    return item > pred
+
+def mapeamento(item):
+    return item+1 if item%2 == 0 else item-1
+lista = [ 10,9,11,14,8,4,7,16,12,14]
+lista = [mapeamento(item) for pred,item in zip(lista, lista[1:]) if filtro(pred,item)]
+print(lista)
