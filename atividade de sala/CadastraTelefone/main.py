@@ -1,4 +1,4 @@
-from functions import *
+from CadastraTelefone.functions import *
 from flet import *
 
 def programa():

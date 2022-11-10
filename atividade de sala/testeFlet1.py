@@ -1,13 +1,15 @@
 import flet
 from flet import IconButton, Page, Row, TextField, icons, theme, colors, border_radius,Container, Text
 
-# from testeFlet2 import get_indice
+from CadastraTelefone.main import programa
+
+programa()
 
 def main(page: Page):
     page.title = "Calc App"
     result = Text(value="0", color=colors.WHITE, size=20)
-    page.window_width = 350
-    page.window_height = 350
+    page.window_width = 550
+    page.window_height = 550
     page.horizontal_alignment = "center"
     page.bgcolor = "#FFFFFF"
     page.add(
@@ -19,4 +21,4 @@ def main(page: Page):
         )
      )
 
-flet.app(target=main)
+flet.app(target=main, view=flet.WEB_BROWSER)
