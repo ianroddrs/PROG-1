@@ -1,0 +1,78 @@
+#q3
+lista = [ 4,40,50,68,28,75,73,17,55,17]
+nova_lista = list(map(min,zip(lista,lista[1:],lista[2:])))
+print(nova_lista)
+
+#q10
+
+lista = [
+{'produto': 'A','quantidade': 10},
+{'produto': 'B','quantidade': 2},
+{'produto': 'C','quantidade': 30},
+{'produto': 'D','quantidade': 17},
+]
+
+for idx, item in enumerate(lista.copy()):
+	if item['quantidade'] > 10:
+		lista.remove(item)
+	else:
+		lista[idx] = item['produto']
+print(lista)
+'''------------------------------------------------------------------------------------------------------'''
+lista = [
+{'produto': 'A','quantidade': 10},
+{'produto': 'B','quantidade': 2},
+{'produto': 'C','quantidade': 30},
+{'produto': 'D','quantidade': 17},
+]
+
+filtro = lambda item: item['quantidade'] <= 10
+mapeamento = lambda item: item['produto']
+
+lista = [mapeamento(item) for item in lista.copy() if filtro(item)]
+print(lista)
+
+'''------------------------------------------------------------------------------------------------------'''
+lista = [
+{'produto': 'A','quantidade': 10},
+{'produto': 'B','quantidade': 2},
+{'produto': 'C','quantidade': 30},
+{'produto': 'D','quantidade': 7},
+]
+
+filtro = lambda item: item['quantidade'] <= 10
+mapeamento = lambda item: f"{item['produto']}-{item['quantidade']}"
+
+lista = list(map(mapeamento, filter(filtro, lista)))
+print(lista)
+
+'''------------------------------------------------------------------------------------------------------'''
+#21
+import random as r
+def f():
+	if type(saida) is not bool:
+		return saida
+	lista = []
+	for item in range(5):
+		lista.append(r.randrange(1,20))
+
+	check = True
+	for x,y in zip(lista[1:],lista):
+		check &= x > y
+	saida = lista if check  else check
+	return f(saida)
+
+'''------------------------------------------------------------------------------------------------------'''
+import random as r
+from functools import reduce
+def f(saida=True):
+	if type(saida) is not bool:
+		return saida
+	lista = [r.randrange(1,20) for item in range(5)]
+	aux = zip(lista[1:], lista)
+	reducao = lambda check, item: check and item[0] > item[1]
+	check = reduce(reducao, aux, True)	
+	saida = lista if check  else check
+	return f(saida)
+
+print(f())
